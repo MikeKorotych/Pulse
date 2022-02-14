@@ -18,6 +18,10 @@
       border-radius: 50%;
       border: 1px solid #ecececd7;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: all 1s;
+      &:hover {
+         transform: rotateY(10deg);
+      }
    }
    &_name {
       font-weight: 700;

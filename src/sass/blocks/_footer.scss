@@ -1,3 +1,92 @@
+// .footer {
+// height: 630px;
+// position: relative;
+// color: rgb(255, 255, 255);
+// &__info {
+//     padding: 50px 68px 60px 68px;
+//     position: absolute;
+//     top: 0;
+//     left: 50%;
+//     width: 460px;
+//     height: 270px;
+//     background-color: $main-color;
+//     transform: translateX(-50%);
+//     text-align: center;
+//     }
+//     &__addr {
+//         font-size: 20px;
+//         font-weight: 300;
+//         margin-bottom: 36px;
+//     }
+//     &__phone {
+//         font-weight: 700;
+//         font-size: 20px;
+//         color: rgb(255, 255, 255);
+//     }
+// &__social-item {
+//     display: block;
+//     width: 52px;
+//     height: 52px;
+//     border-radius: 50%;
+//     border: 2px solid #fff;
+// }
+// &__social-item img{
+//     width: 24q;
+//     height: 24px;
+//     }
+// }
+
 .footer {
-height: 630px;
+    height: 630px;
+    position: relative;    
+    color: rgb(255, 255, 255);
+    line-height: 1;
+    &__addr {
+        margin: 0;
+    }
+    &__phone {
+        font-weight: 700;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        &:hover {
+            color: #fff;
+        }
+    }
+    &__info {
+        padding: 51px 68px 56px 68px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 460px;
+        height: 270px;
+        background-color: $main-color;
+        transform: translateX(-50%);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+    &__social {
+        display: flex;
+        justify-content: center;
+    }
+    &__social-item {
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        margin: 0 4%;
+        transition: all 0.5s;
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px #fff;
+        }
+        }
+    &__social-item img{
+        width: 24q;
+        height: 24px;
+    }
 }
