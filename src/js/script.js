@@ -48,4 +48,46 @@ $(document).ready(function () {
          $('.overlay, #order').fadeIn('slow');
       });
    });
+
+   function valideForms(form) {
+      $(form).validate({
+         rules: {
+            name: 'required',
+            phone: 'required',
+            email: {
+               required: true,
+               email: true
+            }
+         },
+         messages: {
+            name: 'Пожалуйста, введите своё имя',
+            phone: 'Пожалуйста, введите свой номер телефона',
+            email: {
+               required: 'Пожалуйста, введите свою почту',
+               email: 'Неправильно введён адрес почты'
+            }
+         }
+      });
+   };
+
+   valideForms('#consultation-form');
+   valideForms('#consultation form');
+   valideForms('#order form');
+
+   $('input[name=phone]').mask("+380(99) 999-99-99");
+
+   $('form').submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+         type: 'POST',
+         url: 'mailer/smart.php',
+         data: $(this).serialize(),
+      }).done(function() {
+         $(this).find('input').val('');
+
+
+         $('form').trigger('reset');
+      });
+      return false;
+   });
 });
